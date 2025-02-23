@@ -579,7 +579,7 @@ class _PermissionCheckerState extends State<PermissionChecker> {
               serverModel.mediaOk,
               !serverModel.mediaOk &&
                       gFFI.userModel.userName.value.isEmpty &&
-                      ¡°Y¡± != "N"
+                      false
                   ? () => showScamWarning(context, serverModel)
                   : serverModel.toggleService),
           PermissionRow(translate("Input Control"), serverModel.inputOk,
