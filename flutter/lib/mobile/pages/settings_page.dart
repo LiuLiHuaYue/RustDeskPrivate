@@ -651,7 +651,7 @@ class _SettingsState extends State<SettingsPage> with WidgetsBindingObserver {
                 //},
               //),
             //],
-          ),
+          //),
         SettingsSection(title: Text(translate("Settings")), tiles: [
           // if (!disabledSettings && !_hideNetwork && !_hideServer)
             // SettingsTile(
