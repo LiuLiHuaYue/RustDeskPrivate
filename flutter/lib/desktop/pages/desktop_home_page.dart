@@ -58,7 +58,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    final isIncomingOnly = bind.isIncomingOnly();
+    final isIncomingOnly = true;
     return _buildBlock(
         child: Row(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,7 +76,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
   }
 
   Widget buildLeftPane(BuildContext context) {
-    final isIncomingOnly = bind.isIncomingOnly();
+    final isIncomingOnly = true;
     final isOutgoingOnly = bind.isOutgoingOnly();
     final children = <Widget>[
       if (!isOutgoingOnly) buildPresetPasswordWarning(),
@@ -253,23 +253,23 @@ class _DesktopHomePageState extends State<DesktopHomePage>
     final textColor = Theme.of(context).textTheme.titleLarge?.color;
     RxBool hover = false.obs;
     return InkWell(
-      onTap: DesktopTabPage.onAddSetting,
-      child: Tooltip(
-        message: translate('Settings'),
-        child: Obx(
-          () => CircleAvatar(
-            radius: 15,
-            backgroundColor: hover.value
-                ? Theme.of(context).scaffoldBackgroundColor
-                : Theme.of(context).colorScheme.background,
-            child: Icon(
-              Icons.more_vert_outlined,
-              size: 20,
-              color: hover.value ? textColor : textColor?.withOpacity(0.5),
-            ),
-          ),
-        ),
-      ),
+      //onTap: DesktopTabPage.onAddSetting,
+      //child: Tooltip(
+        //message: translate('Settings'),
+        //child: Obx(
+          //() => CircleAvatar(
+            //radius: 15,
+            //backgroundColor: hover.value
+                //? Theme.of(context).scaffoldBackgroundColor
+                //: Theme.of(context).colorScheme.background,
+            //child: Icon(
+              //Icons.more_vert_outlined,
+              //size: 20,
+              //color: hover.value ? textColor : textColor?.withOpacity(0.5),
+            //),
+          /),
+        //),
+      //),
       onHover: (value) => hover.value = value,
     );
   }
@@ -535,7 +535,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
         // );
       // }
     // }
-    // if (bind.isIncomingOnly()) {
+    // if (true) {
       // return Align(
         // alignment: Alignment.centerRight,
         // child: OutlinedButton(
@@ -583,7 +583,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
       children: [
         Container(
           margin: EdgeInsets.fromLTRB(
-              0, marginTop, 0, bind.isIncomingOnly() ? marginTop : 0),
+              0, marginTop, 0, true ? marginTop : 0),
           child: Container(
               decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -807,7 +807,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
     });
     _uniLinksSubscription = listenUniLinks();
 
-    if (bind.isIncomingOnly()) {
+    if (true) {
       WidgetsBinding.instance.addPostFrameCallback((_) {
         _updateWindowSize();
       });
