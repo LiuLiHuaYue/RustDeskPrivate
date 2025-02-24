@@ -270,7 +270,7 @@ class _DesktopHomePageState extends State<DesktopHomePage>
           /),
         //),
       //),
-      onHover: (value) => hover.value = value,
+      //onHover: (value) => hover.value = value,
     );
   }
 
